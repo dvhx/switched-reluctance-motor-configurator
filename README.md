@@ -16,7 +16,7 @@ coil diameter, number of coils and poles.
 you can visualize one motor, choose parameters and click on the Step button to move
 the motor forward. 
 
-[Here](https://dvhx.github.io/switched-reluctance-motor-configurator/configurations.html) are
+[Here](https://dvhx.github.io/switched-reluctance-motor-configurator/combinations.html) are
 all possible combinations in one big table. For combination of up to 12 coils and poles, there
 are **144** combinations, out of which only 92 produce valid motors.
 
