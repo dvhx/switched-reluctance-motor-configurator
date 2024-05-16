@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Switched Reluctance Motor - all combonations</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <link rel="shortcut icon" href="image/icon.png" type="image/png" />
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <link rel="stylesheet" href="depend/canvas/canvas.min.css?version=2" type="text/css"/>
+    <script type="text/javascript" src="depend/canvas/canvas.src.js?version=2"></script>
+    <script type="text/javascript" src="depend/vec2/vec2.js?version=2"></script>
+
+    <link rel="stylesheet" href="css/index.css?version=2" type="text/css"/>
+
+    <script type="text/javascript" src="js/srm.js?version=2"></script>
+    <script type="text/javascript" src="js/global.js?version=2"></script>
+    <script type="text/javascript" src="js/combinations.js?version=2"></script>
+
+    <style>
+    table {
+        margin-top: 1em;
+    }
+    table, tr, td, th {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    tr:hover {
+        background-color: skyblue;
+    }
+    </style>
+  </head>
+  <body>
+
+    <h3>Switched Reluctance Motor - all combinations</h3>
+
+    <div>
+        <label>
+            Motor outer diameter
+            <input id="motor_outer_diameter" value="30" type="number" step=1 min=0 max=9999 size=5>mm,
+        </label>
+
+        <label>
+            <span style="color: cyan;">Coil</span> diameter
+            <input id="coil_diameter" value="5.8" type="number" step=1 min=0 max=9999 size=5>mm,
+        </label>
+
+        <label>
+            Coils or poles
+            <input id="all_count" value="4" type="number" min="3" max="1000" step="1" size=5>,
+        </label>
+
+        <label style="user-select: none;">
+            <input id="all_count_sorted" type="checkbox" checked style="vertical-align: middle">
+            sort by step angle ascending
+        </label>
+
+        <button id="calculate">Calculate</button>
+    </div>
+
+    <table id="combinations">
+        <tr>
+            <th>Coils</th>
+            <th>Poles</th>
+            <th>Coils+Poles</th>
+            <th>Steps</th>
+            <th>Step angle</th>
+            <th>Overlap</th>
+            <th title="Assuming poles are mounted in PCB holes, by increasing number of poles you are narrowing the bridge between poles, when it reaches 0 the rotor will fall apart. 100% means the bridge is as wide as a pole. You can use 0% if you are glue poles on top of the PCB without drilling the hole.">Rotor integrity</th>
+            <th>Show</th>
+            <th>Issues</th>
+        </tr>
+        <tbody id="combinations_body"></tbody>
+    </table>
+
+  </body>
+</html>
+
+

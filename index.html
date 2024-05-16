@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Switched Reluctance Motor</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <link rel="shortcut icon" href="image/icon.png" type="image/png" />
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <link rel="stylesheet" href="depend/canvas/canvas.min.css?version=2" type="text/css"/>
+    <script type="text/javascript" src="depend/canvas/canvas.src.js?version=2"></script>
+    <script type="text/javascript" src="depend/vec2/vec2.js?version=2"></script>
+
+    <link rel="stylesheet" href="css/index.css?version=2" type="text/css"/>
+
+    <script type="text/javascript" src="js/srm.js?version=2"></script>
+    <script type="text/javascript" src="js/global.js?version=2"></script>
+    <script type="text/javascript" src="js/index.js?version=2"></script>
+
+  </head>
+  <body>
+
+    <label>
+        Motor outer diameter
+        <input id="motor_outer_diameter" value="30" type="number" step=1 min=0 max=9999 size=5>mm,
+    </label>
+
+    <label>
+        <span style="color: cyan;">Coil</span> diameter
+        <input id="coil_diameter" value="5.8" type="number" step=1 min=0 max=9999 size=5>mm,
+    </label>
+
+    <label>
+        <span style="color: cyan;">Coil</span> count
+        <input id="coil_count" value="3" type="number" step=1 min=0 max=9999 size=5>,
+    </label>
+
+    <label>
+        <span style="color: purple;">Pole</span> count
+        <input id="pole_count" value="2" type="number" step=1 min=0 max=9999 size=5>
+    </label>
+
+    <button id="step2">Step</button>
+    <div><canvas id="b" width="600" height="600"></canvas></div>
+
+    <pre id="errors" style="color: red"></pre>
+    <pre id="log"></pre>
+
+  </body>
+</html>
+
