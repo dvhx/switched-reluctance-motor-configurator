@@ -153,7 +153,9 @@ SRM.prototype.render = function () {
     this.context.textAlign = 'left';
     this.context.textBaseline = 'top';
     this.context.fillStyle = 'black';
-    this.context.fillText(this.coil_count * this.pole_count + ' steps (' + (360 / (this.coil_count * this.pole_count)).toFixed(1) + '° per step)', 0, 20);
+    if (this.step_angle) {
+        this.context.fillText((360 / this.step_angle).toFixed(0) + ' steps (' + this.step_angle.toFixed(1) + '° per step)', 0, 20);
+    }
 };
 
 SRM.prototype.nearestPole = function (aCoilIndex) {
