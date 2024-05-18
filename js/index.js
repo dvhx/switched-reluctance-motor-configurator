@@ -15,6 +15,13 @@ SC.onConfigChanged = function () {
     );
     SC.motor.setCanvas('b');
     SC.motor.render();
+    var r = SC.motor.run();
+    if (r.error) {
+        SC.motor.context.fillStyle = 'red';
+        SC.motor.context.textAlign = 'center';
+        SC.motor.context.textBaseline = 'top';
+        SC.motor.context.fillText(r.error, SC.motor.canvas.width / 2, 20);
+    }
 };
 
 SC.onStep = function () {
